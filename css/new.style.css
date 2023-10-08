@@ -1,15 +1,12 @@
-*{
-  
+* {
 }
 body {
   /* color: #ffffff !important; */
   background: #fff !important;
   background-image: url(../images/background/background.jpeg);
 }
-/* section padding */
-section {
-  /* padding: 7rem; */
-}
+/* */
+
 .gradient-header {
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -32,8 +29,10 @@ section {
   background-image: url(../images/deltaweb.png) !important;
   background-attachment: fixed !important;
   background-repeat: no-repeat !important;
-  background-size: contain !important;
+  background-size: cover !important;
   filter: opacity(1);
+  height: 100vh; /* Adjust the height as needed */
+  transition: background-size 0.5s; /* Transition for smooth scaling */
   padding: 19% 5%; /* Adjust the padding as needed */
 }
 
@@ -282,8 +281,7 @@ button#prev {
 
 .card-1 {
   background-color: #fff !important;
-  border-radius: calc(1.25rem - 1px) calc(1.25rem - 1px) calc(1.25rem - 1px)
-    calc(1.25rem - 1px) !important;
+  border-radius: 2rem !important;
   width: 24rem;
   height: auto;
   margin: 0 auto;
@@ -321,6 +319,7 @@ button#prev {
   background-size: fill !important;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: auto;
 }
 
 /* Content Styles */
@@ -477,40 +476,18 @@ a {
     margin: 10px auto;
     padding: 0.5rem;
   }
-
-  /* Update your content to be responsive */
-  .card-content {
-    /* Adjust content styles for smaller screens */
-  }
-
-  /* Adjust other styles as needed for smaller screens */
-  .logo-container {
-    /* Adjust logo container styles for smaller screens */
-  }
-
-  .logo {
-    /* Adjust logo styles for smaller screens */
-  }
-
-  /* Add more specific styles for other elements as needed */
-}
-
-h2,
-h4,
-h5,
-h6 {
-  font-size: 24px;
-  /* Adjust the default font size as needed */
-}
-
-/* Media query for screens smaller than 768px */
-@media (max-width: 768px) {
   h2,
   h4,
   h5,
   h6 {
-    font-size: 20px !important;
+    font-size: 15px !important;
     /* Adjust the font size for smaller screens */
+  }
+  .fa-solid {
+    font-size: 10px !important; /* Decrease the font size for smaller screens */
+  }
+  .fa {
+    font-size: 10px !important; /* Decrease the font size for smaller screens */
   }
 }
 
@@ -519,9 +496,12 @@ h6 {
   h2,
   h4,
   h5,
-  h6 {
-    font-size: 18px !important;
+  h6,i {
+    font-size: 7px !important;
     /* Adjust the font size for even smaller screens */
+  }
+  .fa {
+    font-size: 10px !important; /* Decrease the font size for smaller screens */
   }
 }
 
