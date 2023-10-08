@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Business Cards</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="css/new.style.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/parsley.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css.map">
+    <link rel="icon" href="images/icon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- google icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://vjs.zencdn.net/7.16.4/video-js.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="">
+        <nav class="navbar navbar-expand-lg navbar-light sticky-header gradient-header">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#"> <img src="images/deltaweb.png" alt="logo" class="logo" srcset=""> </a>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <div class="col-lg-8 col-12">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link contact-link active" aria-current="page" href="index.html">
+                                    Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link contact-link " aria-current="page" href="about.html">About</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle contact-link" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Digital card
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item contact-link" href="form2.html">Create Card </a></li>
+                                    <li><a class="dropdown-item contact-link" href="ShowQr.html">View Card</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle contact-link" href="" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                                    QR-Code
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- <li><a class="dropdown-item contact-link" href="qr-main.php">home</a></li> -->
+                                    <li><a class="dropdown-item contact-link" href="qr-code.html">Create QR-Code </a></li>
+                                    <li><a class="dropdown-item contact-link" href="qr-scan.html">Scan QR-Code</a></li>
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-12">
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+<section>
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row text-dark">
+                <div class="col-lg-8 col-12">
+                    <div class="card sh" style="background-color:rgb(227 242 253) !important;">
+                        <div class="card-header" style="background-color:rgb(227 242 253) !important;">
+                            <h1 class="mb-0">QR Code Generator</h1>
+                        </div>
+                        <div class="card-body" style="display: flex;flex-direction: row;align-content: flex-end;flex-wrap: nowrap;justify-content: space-evenly;align-items: center;">
+                            <span class="input-group-text" style="background-color:#f0b803!important; display:flex; justify-content:center; max-width:40%!important;">
+                                <img src="images/qr-gen.jpg" class="img-fluid qr-gen " alt="Image">
+                            </span>
+                            <form>
+                                <div class="form-group">
+                                    <label for="weburl">Website or Page URL</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+
+                                        </div>
+                                        <input type="text" class="form-control" id="text" name="weburl" placeholder="https://www.yoursite.com">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer" style="background-color:rgb(227 242 253) !important;">
+                            <button id="saveButton" class="btn btn-primary btn-lg w-100 mt-2 mb-2 submit-qr-code" type="button">Save QR Code<i class="icon-right-arrow font-16 ml-2"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="container">
+                        <div class="container-fluid">
+
+                            <div class="card qr-card" style="flex-wrap: wrap;align-content: space-around !important;">
+                                <div class="card-body">
+                                    <!-- No need for a form or input here -->
+                                    <div id="qrcode" class="qr-code"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+<?php
+include '_footer.php';
+?>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+</script>
+<script>
+    const qrcode = new QRCode(document.getElementById("qrcode"));
+
+    // Attach an input event handler to the text input
+    $("#text").on("input", function(e) {
+        const textValue = e.target.value.trim();
+        qrcode.makeCode(textValue);
+    });
+
+    // Attach a click event handler to the "Save" button
+    $("#saveButton").click(function() {
+        const canvas = document.querySelector("#qrcode canvas");
+        const qrCodeDataURL = canvas.toDataURL("image/jpg");
+        const downloadLink = document.createElement("a");
+        downloadLink.href = qrCodeDataURL;
+        downloadLink.download = "qrcode.png"; // Set the file name here
+        downloadLink.click();
+    });
+
+    // Initial QR code generation
+    const initialTextValue = $("#text").val().trim();
+    qrcode.makeCode(initialTextValue);
+</script>
