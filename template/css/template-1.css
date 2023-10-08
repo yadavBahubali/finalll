@@ -1,0 +1,84 @@
+@import url(template1.scss);
+/* Reset default margin, padding, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styles for the entire card container */
+.smooth-curve-card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 450px;
+  background-color: #f0f0f0; /* Change to your desired background color */
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for the top section of the card */
+.smooth-curve-card-top {
+  background-color: #3b82f6; /* Change to your desired top section background color */
+  color: #fff; /* Text color for the top section */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+/* Styles for the top section header */
+.smooth-curve-card-top_header {
+  font-size: 1.5rem;
+}
+
+/* Styles for the top section placeholder */
+.smooth-curve-card-top_placeholder {
+  width: 100%;
+  height: 10px;
+  background-color: #ffffff; /* Change to your desired color */
+  margin-top: 1rem;
+}
+
+/* Styles for the bottom section of the card */
+.smooth-curve-card-bottom {
+  background-color: #ffffff; /* Change to your desired bottom section background color */
+  flex-grow: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+/* Styles for the bottom section header */
+.smooth-curve-card-bottom_header {
+  font-size: 1.2rem;
+}
+
+/* Styles for the bottom section placeholders */
+.smooth-curve-card-bottom_placeholders {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+/* Styles for individual placeholders */
+.placeholder.loading {
+  width: 23%;
+  height: 20px;
+  background-color: #f0f0f0; /* Change to your desired color */
+}
+
+/* Styles for the bottom button with the loading class */
+.smooth-curve-card-bottom_btn.loading {
+  width: 100%;
+  height: 40px;
+  background-color: #f0f0f0; /* Change to your desired color */
+  margin-top: 1rem;
+}
